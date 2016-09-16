@@ -167,7 +167,6 @@ return [
          * Package Service Providers...
          */
 
-        Barryvdh\Debugbar\ServiceProvider::class,
         'Cartalyst\Alerts\Laravel\AlertsServiceProvider',
         Intervention\Image\ImageServiceProvider::class,
         'Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider',
