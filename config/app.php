@@ -173,6 +173,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         /*
          * Application Service Providers...
