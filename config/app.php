@@ -170,6 +170,7 @@ return [
         'Cartalyst\Alerts\Laravel\AlertsServiceProvider',
         Intervention\Image\ImageServiceProvider::class,
         'Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider',
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
 
         /*
@@ -208,6 +209,7 @@ return [
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,

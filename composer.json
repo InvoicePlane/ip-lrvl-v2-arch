@@ -13,7 +13,8 @@
         "cartalyst/alerts": "^2.0",
         "intervention/image": "^2.3",
         "ignited/laravel-omnipay": "2.*",
-        "venturecraft/revisionable": "1.*"
+        "venturecraft/revisionable": "1.*",
+        "maatwebsite/excel": "~2.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
