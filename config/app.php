@@ -171,6 +171,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         'Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider',
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
 
         /*
