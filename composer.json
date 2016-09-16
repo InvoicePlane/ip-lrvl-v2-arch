@@ -12,7 +12,8 @@
         "spatie/laravel-permission": "^1.5",
         "cartalyst/alerts": "^2.0",
         "intervention/image": "^2.3",
-        "ignited/laravel-omnipay": "2.*"
+        "ignited/laravel-omnipay": "2.*",
+        "venturecraft/revisionable": "1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
