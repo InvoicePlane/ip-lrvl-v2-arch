@@ -1,0 +1,17 @@
+# Directories
+/.idea/
+/.vagrant/
+/node_modules/
+/public/build/
+/public/css/
+/public/js/
+/public/storage/
+/vendor/
+
+# Files
+.env
+.phpstorm.meta.php
+_ide_helper.php
+composer.lock
+Homestead.json
+Homestead.yaml
