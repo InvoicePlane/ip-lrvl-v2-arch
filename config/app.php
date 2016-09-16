@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
 
+        'Cartalyst\Alerts\Laravel\AlertsServiceProvider',
         Spatie\Permission\PermissionServiceProvider::class,
 
         /*
@@ -193,6 +194,7 @@ return [
 
     'aliases' => [
 
+        'Alert' => 'Cartalyst\Alerts\Laravel\Facades\Alert',
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
