@@ -15,7 +15,8 @@
         "ignited/laravel-omnipay": "2.*",
         "venturecraft/revisionable": "1.*",
         "maatwebsite/excel": "~2.1.0",
-        "spatie/laravel-activitylog": "^1.8"
+        "spatie/laravel-activitylog": "^1.8",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
