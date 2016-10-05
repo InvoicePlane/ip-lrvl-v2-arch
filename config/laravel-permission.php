@@ -101,7 +101,7 @@ return [
         |
         */
 
-        'user_has_permissions' => 'user_has_permissions',
+        'user_has_permissions' => 'user_permissions',
 
         /*
         |--------------------------------------------------------------------------
@@ -114,7 +114,7 @@ return [
         |
         */
 
-        'user_has_roles' => 'user_has_roles',
+        'user_has_roles' => 'user_roles',
 
         /*
         |--------------------------------------------------------------------------
@@ -127,7 +127,7 @@ return [
         |
         */
 
-        'role_has_permissions' => 'role_has_permissions',
+        'role_has_permissions' => 'role_permissions',
 
     ],
 
