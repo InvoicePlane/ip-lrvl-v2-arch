@@ -85,5 +85,7 @@ class AddOtherTables extends Migration
         Schema::drop('email_templates');
         Schema::drop('notes');
         Schema::drop('tax_rates');
+        Schema::drop('tax_rate_voucher_item');
+        Schema::drop('tax_rate_voucher');
     }
 }
