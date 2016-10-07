@@ -12,4 +12,14 @@ class TaskStatus extends Model
 {
     // Table definition
     protected $table = 'task_statuses';
+
+    // Disable timestamps
+    public $timestamps = false;
+
+    // Fillable db fields
+    protected $fillable = [
+        'title',
+        'type',
+        'color',
+    ];
 }
