@@ -21,6 +21,7 @@ class AddPaymentTables extends Migration
             $table->string('op_transaction_id')->nullable();
             $table->text('op_message')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('payment_gateways', function (Blueprint $table) {
