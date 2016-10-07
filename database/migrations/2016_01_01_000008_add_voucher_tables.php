@@ -37,7 +37,7 @@ class AddVoucherTables extends Migration
             $table->increments('id');
             $table->integer('base_invoice_id')->unsigned(); // FK
             $table->integer('base_voucher_id')->unsigned(); // FK
-            $table->string('base_invice_type');
+            $table->string('base_invoice_type');
             $table->boolean('is_disabled');
             $table->string('interval');
             $table->timestamp('next_date')->nullable();

@@ -12,4 +12,12 @@ class CreditInvoice extends Model
 {
     // Table definition
     protected $table = 'credit_invoices';
+
+    // Disable timestamps
+    public $timestamps = false;
+
+    // Fillable db fields
+    protected $fillable = [
+        'voucher_id',
+    ];
 }

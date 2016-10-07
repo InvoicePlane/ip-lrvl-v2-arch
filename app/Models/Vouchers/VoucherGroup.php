@@ -3,6 +3,7 @@
 namespace App\Models\Vouchers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class VoucherGroup
@@ -10,6 +11,20 @@ use Illuminate\Database\Eloquent\Model;
  */
 class VoucherGroup extends Model
 {
+    use SoftDeletes;
+
     // Table definition
     protected $table = 'voucher_groups';
+
+    // Disable timestamps
+    public $timestamps = false;
+
+    // Fillable db fields
+    protected $fillable = [
+        'title',
+        'description',
+        'identifier_template',
+        'next_id',
+        'is_disabled',
+    ];
 }

@@ -12,4 +12,16 @@ class VoucherStatus extends Model
 {
     // Table definition
     protected $table = 'voucher_statuses';
+
+    // Disable timestamps
+    public $timestamps = false;
+
+    // Fillable db fields
+    protected $fillable = [
+        'name',
+        'description',
+        'type',
+        'color',
+        'read_only',
+    ];
 }
