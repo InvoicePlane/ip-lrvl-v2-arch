@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Note
@@ -10,6 +11,16 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Note extends Model
 {
+    use SoftDeletes;
+
     // Table definition
     protected $table = 'notes';
+
+    // Fillable db fields
+    protected $fillable = [
+        'notable_id',
+        'notable_type',
+        'content',
+        'author_id',
+    ];
 }
