@@ -20,6 +20,12 @@ class AddForeignKeys extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
         });
 
+        Schema::table('clients', function (Blueprint $table) {
+            $table->foreign('main_contact_id')->references('id')->on('contacts');
+            $table->foreign('main_address_id')->references('id')->on('addresses');
+            $table->foreign('language_id')->references('id')->on('languages');
+        });
+
         Schema::table('contacts', function (Blueprint $table) {
             $table->foreign('client_id')->references('id')->on('clients');
             $table->foreign('address_id')->references('id')->on('addresses');
@@ -181,6 +187,12 @@ class AddForeignKeys extends Migration
          */
         Schema::table('addresses', function (Blueprint $table) {
             $table->dropForeign('addresses_client_id_foreign');
+        });
+
+        Schema::table('clients', function (Blueprint $table) {
+            $table->dropForeign('clients_main_contact_id_foreign');
+            $table->dropForeign('clients_main_address_id_foreign');
+            $table->dropForeign('clients_language_id_foreign');
         });
 
         Schema::table('contacts', function (Blueprint $table) {
