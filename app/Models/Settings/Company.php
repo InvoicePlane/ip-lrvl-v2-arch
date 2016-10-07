@@ -12,4 +12,12 @@ class Company extends Model
 {
     // Table definition
     protected $table = 'companies';
+
+    // Fillable db fields
+    protected $fillable = [
+        'name',
+        'short_name',
+        'address_id',
+        'is_disabled',
+    ];
 }
