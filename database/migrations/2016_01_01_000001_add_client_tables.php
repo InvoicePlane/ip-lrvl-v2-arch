@@ -27,8 +27,8 @@ class AddClientTables extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('short_name')->nullable();
-            $table->integer('main_contact_id')->unsigned(); // FK
-            $table->integer('main_address_id')->unsigned(); // FK
+            $table->integer('main_contact_id')->unsigned()->nullable(); // FK
+            $table->integer('main_address_id')->unsigned()->nullable(); // FK
             $table->integer('language_id')->unsigned(); // FK
             $table->boolean('is_company');
             $table->boolean('is_vendor');

@@ -30,4 +30,28 @@ class Contact extends Model
         'web',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the contacts associated client
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function client()
+    {
+        return $this->belongsTo('App\Models\Clients\Client');
+    }
+
+    /**
+     * Returns the contacts address
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address()
+    {
+        return $this->belongsTo('App\Models\Clients\Address');
+    }
 }

@@ -27,4 +27,46 @@ class Client extends Model
         'is_vendor',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns main contact person
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function mainContact()
+    {
+        return $this->hasOne('App\Models\Clients\Contact');
+    }
+
+    /**
+     * Returns all available contacts
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Clients\Contact', 'client_id');
+    }
+
+    /**
+     * Returns the main address
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function mainAddress()
+    {
+        return $this->hasOne('App\Models\Clients\Address');
+    }
+
+    /**
+     * Returns all available addresses
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function addresses()
+    {
+        return $this->hasMany('App\Models\Clients\Address', 'client_id');
+    }
 }
