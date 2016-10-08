@@ -26,4 +26,19 @@ class CustomField extends Model
         'related_model',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns all custom field values
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function values()
+    {
+        return $this->hasMany('App\Models\CustomFields\CustomFieldValue', 'custom_field_id');
+    }
 }

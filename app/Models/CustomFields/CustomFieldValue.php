@@ -23,4 +23,19 @@ class CustomFieldValue extends Model
         'value',
         'author_id',
     ];
+
+    /*
+   |--------------------------------------------------------------------------
+   | Relations
+   |--------------------------------------------------------------------------
+   */
+
+    /**
+     * Returns the associated custom field
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function customfield()
+    {
+        return $this->belongsTo('App\Models\CustomFields\CustomField', 'custom_field_id');
+    }
 }
