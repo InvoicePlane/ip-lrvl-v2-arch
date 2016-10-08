@@ -28,4 +28,19 @@ class Item extends Model
         'group_id',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the items associated group
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Items\ItemGroup', 'group_id');
+    }
 }
