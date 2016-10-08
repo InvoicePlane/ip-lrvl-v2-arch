@@ -24,4 +24,19 @@ class Payment extends Model
         'op_transaction_id',
         'op_message',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the associated payment method
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function paymentMethod()
+    {
+        return $this->belongsTo('App\Models\Payments\PaymentMethod', 'payment_method_id');
+    }
 }
