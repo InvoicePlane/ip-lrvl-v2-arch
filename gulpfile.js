@@ -5,7 +5,7 @@ elixir(function (mix) {
      |--------------------------------------------------------------------------
      | Sass
      */
-    mix.sass('app.scss');
+    mix.sass('themes/ip-blue/ip-blue.scss', './public/css/IP-Blue.css');
 
     /*
      |--------------------------------------------------------------------------
@@ -18,4 +18,14 @@ elixir(function (mix) {
     ], './public/js/dependencies.js');
 
     mix.scripts('app.js', './public/js/app.js');
+
+    /*
+     |--------------------------------------------------------------------------
+     | Versioning
+     */
+    mix.version([
+        './public/css/ip-blue.css',
+        './public/js/app.js',
+        './public/js/dependencies.js',
+    ]);
 });
