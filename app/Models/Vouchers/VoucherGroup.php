@@ -27,4 +27,19 @@ class VoucherGroup extends Model
         'next_id',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns all associated vouchers
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vouchers()
+    {
+        return $this->hasMany('App\Models\Vouchers\Voucher', 'voucher_group_id');
+    }
 }

@@ -24,6 +24,38 @@ class VoucherItem extends Model
         'item_order',
         'original_item_id',
         'task_id',
-        'item_tax_id',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the original item
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function originalItem()
+    {
+        return $this->belongsTo('App\Models\Items\Item', 'original_item_id');
+    }
+
+    /**
+     * Returns the associated task
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function task()
+    {
+        return $this->belongsTo('App\Models\Projects\Task', 'task_id');
+    }
+
+    /**
+     * Returns all associated taxes
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function taxes()
+    {
+        return $this->belongsToMany('App\Models\Taxrate', 'voucher_item_tax_rates');
+    }
 }

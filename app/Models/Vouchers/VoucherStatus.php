@@ -24,4 +24,19 @@ class VoucherStatus extends Model
         'color',
         'read_only',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns all associated vouchers
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vouchers()
+    {
+        return $this->hasMany('App\Models\Vouchers\Voucher', 'status_id');
+    }
 }

@@ -30,4 +30,19 @@ class VoucherAmounts extends Model
         'voucher_paid',
         'voucher_balance',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the associated voucher
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function voucher()
+    {
+        return $this->belongsTo('App\Models\Vouchers\Voucher');
+    }
 }

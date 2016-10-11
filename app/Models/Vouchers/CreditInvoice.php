@@ -20,4 +20,19 @@ class CreditInvoice extends Model
     protected $fillable = [
         'voucher_id',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the associated voucher
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function voucher()
+    {
+        return $this->belongsTo('App\Models\Vouchers\Voucher');
+    }
 }

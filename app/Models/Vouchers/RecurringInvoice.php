@@ -26,4 +26,28 @@ class RecurringInvoice extends Model
         'next_date',
         'end_date',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the base voucher
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function baseVoucher()
+    {
+        return $this->belongsTo('App\Models\Vouchers\Voucher', 'base_voucher_id');
+    }
+
+    /**
+     * Returns the base invoice
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function baseInvoice()
+    {
+        return $this->belongsTo('App\Models\Vouchers\Invoice', 'base_invoice_id');
+    }
 }

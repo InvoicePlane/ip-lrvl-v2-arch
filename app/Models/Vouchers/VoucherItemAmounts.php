@@ -29,4 +29,19 @@ class VoucherItemAmounts extends Model
         'item_tax_total',
         'item_total',
     ];
+
+    /*
+   |--------------------------------------------------------------------------
+   | Relations
+   |--------------------------------------------------------------------------
+   */
+
+    /**
+     * Returns the associated item
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function item()
+    {
+        return $this->belongsTo('App\Models\Items\Item', 'item_id');
+    }
 }
