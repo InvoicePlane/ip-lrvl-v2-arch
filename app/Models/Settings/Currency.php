@@ -26,4 +26,19 @@ class Currency extends Model
         'decimal_places',
         'is_disabled',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the vouchers associated with the currency
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vouchers()
+    {
+        return $this->hasMany('App\Models\Vouchers\Voucher');
+    }
 }

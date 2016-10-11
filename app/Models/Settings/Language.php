@@ -24,4 +24,28 @@ class Language extends Model
         'is_disabled',
         'last_update',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the vouchers associated with the language
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function clients()
+    {
+        return $this->hasMany('App\Models\Clients\Client');
+    }
+
+    /**
+     * Returns the vouchers associated with the language
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vouchers()
+    {
+        return $this->hasMany('App\Models\Vouchers\Voucher');
+    }
 }
