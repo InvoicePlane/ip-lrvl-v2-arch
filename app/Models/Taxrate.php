@@ -36,7 +36,7 @@ class Taxrate extends Model
      */
     public function vouchers()
     {
-        return $this->belongsToMany('App\Models\Vouchers\Voucher', 'voucher_tax_rates');
+        return $this->belongsToMany('App\Models\Vouchers\Voucher', 'tax_rate_voucher');
     }
 
     /**
@@ -45,6 +45,6 @@ class Taxrate extends Model
      */
     public function voucherItems()
     {
-        return $this->belongsToMany('App\Models\Vouchers\VoucherItem', 'vouchevoucher_item_tax_ratesr_tax_rates');
+        return $this->belongsToMany('App\Models\Vouchers\VoucherItem', 'tax_rate_voucher_item');
     }
 }

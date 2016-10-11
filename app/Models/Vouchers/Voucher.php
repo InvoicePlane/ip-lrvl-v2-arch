@@ -117,7 +117,7 @@ class Voucher extends Model
     }
 
     /**
-     * Returns all associated voucher items
+     * Returns all associated voucher amounts
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function amounts()
@@ -131,6 +131,6 @@ class Voucher extends Model
      */
     public function taxes()
     {
-        return $this->belongsToMany('App\Models\Taxrate', 'voucher_tax_rates');
+        return $this->belongsToMany('App\Models\Taxrate', 'tax_rate_voucher');
     }
 }
