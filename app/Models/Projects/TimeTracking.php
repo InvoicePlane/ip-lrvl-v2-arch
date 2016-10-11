@@ -24,4 +24,37 @@ class TimeTracking extends Model
         'started_at',
         'ended_at',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the associated task
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function task()
+    {
+        return $this->belongsTo('App\Models\Projects\Task');
+    }
+
+    /**
+     * Returns the user that added the time tracking
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Users\User');
+    }
+
+    /**
+     * Returns the voucher in which the time tracking is referenced
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function voucher()
+    {
+        return $this->belongsTo('App\Models\Vouchers\Voucher');
+    }
 }

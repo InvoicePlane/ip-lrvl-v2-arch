@@ -22,4 +22,19 @@ class TaskStatus extends Model
         'type',
         'color',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns all tasks for the current status
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Models\Projects\Task', 'status_ud');
+    }
 }

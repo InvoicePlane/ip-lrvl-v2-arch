@@ -24,4 +24,46 @@ class Project extends Model
         'client_id',
         'is_completed',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relations
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Returns the projects associated client
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function client()
+    {
+        return $this->belongsTo('App\Models\Clients\Client');
+    }
+
+    /**
+     * Returns the projects leading user
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function leader()
+    {
+        return $this->belongsTo('App\Models\Users\User');
+    }
+
+    /**
+     * Returns all associated tasks
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Models\Projects\Task', 'project_id');
+    }
+
+    /**
+     * Returns all time trackings for tasks associated with the project
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function timeTrackings()
+    {
+        return $this->hasManyThrough('App\Models\Projects\TimeTracking', 'App\Models\Projects\Task');
+    }
 }
