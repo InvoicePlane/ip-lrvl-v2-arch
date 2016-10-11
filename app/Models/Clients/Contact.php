@@ -54,4 +54,22 @@ class Contact extends Model
     {
         return $this->belongsTo('App\Models\Clients\Address');
     }
+
+    /**
+     * Get all attachments
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function attachments()
+    {
+        return $this->morphMany('App\Models\Attachment', 'commentable');
+    }
+
+    /**
+     * Get all notes
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function notes()
+    {
+        return $this->morphMany('App\Models\Note', 'notable');
+    }
 }

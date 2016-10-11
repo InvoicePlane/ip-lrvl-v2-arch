@@ -23,4 +23,14 @@ class Note extends Model
         'content',
         'author_id',
     ];
+
+
+    /**
+     * Return all attachable models
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function attachable()
+    {
+        return $this->morphTo();
+    }
 }

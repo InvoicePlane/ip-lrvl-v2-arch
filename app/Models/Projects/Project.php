@@ -66,4 +66,22 @@ class Project extends Model
     {
         return $this->hasManyThrough('App\Models\Projects\TimeTracking', 'App\Models\Projects\Task');
     }
+
+    /**
+     * Get all attachments
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function attachments()
+    {
+        return $this->morphMany('App\Models\Attachment', 'commentable');
+    }
+
+    /**
+     * Get all notes
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function notes()
+    {
+        return $this->morphMany('App\Models\Note', 'notable');
+    }
 }

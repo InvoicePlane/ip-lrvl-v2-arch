@@ -43,4 +43,22 @@ class Item extends Model
     {
         return $this->belongsTo('App\Models\Items\ItemGroup', 'group_id');
     }
+
+    /**
+     * Get all attachments
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function attachments()
+    {
+        return $this->morphMany('App\Models\Attachment', 'commentable');
+    }
+
+    /**
+     * Get all notes
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function notes()
+    {
+        return $this->morphMany('App\Models\Note', 'notable');
+    }
 }

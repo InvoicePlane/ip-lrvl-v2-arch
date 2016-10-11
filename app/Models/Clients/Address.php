@@ -47,4 +47,13 @@ class Address extends Model
     {
         return $this->hasMany('App\Models\Clients\Contact', 'address_id');
     }
+
+    /**
+     * Get all notes
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function notes()
+    {
+        return $this->morphMany('App\Models\Note', 'notable');
+    }
 }
