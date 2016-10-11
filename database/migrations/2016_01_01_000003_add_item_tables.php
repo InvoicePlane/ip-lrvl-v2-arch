@@ -22,7 +22,7 @@ class AddItemTables extends Migration
             $table->decimal('purchase_price', 20, 5);
             $table->decimal('sales_price', 20, 5);
             $table->integer('stock')->nullable();
-            $table->integer('group_id')->unsigned(); // FK
+            $table->integer('group_id')->unsigned()->nullable(); // FK
             $table->boolean('is_disabled');
             $table->timestamps();
             $table->softDeletes();
