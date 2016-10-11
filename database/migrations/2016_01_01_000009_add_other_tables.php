@@ -55,7 +55,7 @@ class AddOtherTables extends Migration
             $table->increments('id');
             $table->string('title')->unique();
             $table->string('identifier');
-            $table->decimal('percentage', 5, 5);
+            $table->decimal('percentage', 10, 5);
             $table->boolean('is_disabled');
         });
 
