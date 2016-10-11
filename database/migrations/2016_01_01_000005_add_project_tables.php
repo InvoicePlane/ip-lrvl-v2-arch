@@ -28,7 +28,7 @@ class AddProjectTables extends Migration
             $table->increments('id');
             $table->integer('task_id')->unsigned(); // FK
             $table->integer('user_id')->unsigned(); // FK
-            $table->integer('voucher_id')->unsigned()->nullable(); // FK
+            $table->integer('voucher_item_id')->unsigned()->nullable(); // FK
             $table->timestamp('started_at')->nullable();
             $table->timestamp('ended_at')->nullable();
             $table->timestamps();

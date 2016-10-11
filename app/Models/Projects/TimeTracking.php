@@ -20,7 +20,7 @@ class TimeTracking extends Model
     protected $fillable = [
         'task_id',
         'user_id',
-        'voucher_id',
+        'voucher_item_id',
         'started_at',
         'ended_at',
     ];
@@ -50,11 +50,11 @@ class TimeTracking extends Model
     }
 
     /**
-     * Returns the voucher in which the time tracking is referenced
+     * Returns the voucher item in which the time tracking is referenced
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function voucher()
+    public function voucherItem()
     {
-        return $this->belongsTo('App\Models\Vouchers\Voucher');
+        return $this->belongsTo('App\Models\Vouchers\VoucherItem', 'voucher_item_id');
     }
 }
