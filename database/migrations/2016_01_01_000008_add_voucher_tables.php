@@ -99,7 +99,7 @@ class AddVoucherTables extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('item_amounts', function (Blueprint $table) {
+        Schema::create('voucher_item_amounts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('item_id')->unsigned(); // FK
             $table->decimal('item_amount', 20, 5);

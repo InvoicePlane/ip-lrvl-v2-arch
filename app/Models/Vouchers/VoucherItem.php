@@ -33,6 +33,15 @@ class VoucherItem extends Model
     */
 
     /**
+     * Returns all associated voucher item amonts
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function amounts()
+    {
+        return $this->hasOne('App\Models\Vouchers\VoucherItemAmounts', 'item_id');
+    }
+
+    /**
      * Returns the original item
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
