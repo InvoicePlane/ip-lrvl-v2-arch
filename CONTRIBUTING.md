@@ -13,6 +13,13 @@ If you are not familiar with PHP or coding in general you could also help us in 
 [![Roadmap](https://img.shields.io/badge/Development%3A-Roadmap-429ae1.svg)](https://go.invoiceplane.com/roadmapv2)    
 [![Slack Chat](https://img.shields.io/badge/Chat%3A-Slack-E01563.svg)](https://invoiceplane-slack.herokuapp.com/)    
 
+### Important information about Branches
+
+* :warning: **Never ever push any commits to the `develop` or `master` branches!**
+* Do not create a branch that contains any version numbers like `2.1.4`.
+* Want to create a new branch? Use the issue ID from the issue tracker for the branch name, e.g. `IP2-39`.  
+  There is no issue with your corresponding ticket? Create one please.
+
 ### Contributing Code
 
 :warning: **Read this carefully to prevent your pull request to be closed!**
