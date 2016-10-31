@@ -6,6 +6,8 @@ For more information visit __[InvoicePlane.com](https://invoiceplane.com)__ or v
 
 #### :warning: This is the official development repository for InvoicePlane 2
 
+Please switch to the `develop` branch to work on the latest version of InvoicePlane 2.
+
 If you want to help developing please read the Contribution Guide located in CONTRIBUTING.md.
 You may also [request an invite](https://invoiceplane-slack.herokuapp.com/) for our Slack chat.
 
