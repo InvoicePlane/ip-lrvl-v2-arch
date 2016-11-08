@@ -73,7 +73,7 @@ class AddForeignKeys extends Migration
         Schema::table('time_trackings', function (Blueprint $table) {
             $table->foreign('task_id')->references('id')->on('tasks');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('voucher_id')->references('id')->on('vouchers');
+            $table->foreign('voucher_item_id')->references('id')->on('voucher_items');
         });
 
         Schema::table('tasks', function (Blueprint $table) {
@@ -155,7 +155,7 @@ class AddForeignKeys extends Migration
             $table->foreign('voucher_id')->references('id')->on('vouchers');
         });
 
-        Schema::table('item_amounts', function (Blueprint $table) {
+        Schema::table('voucher_item_amounts', function (Blueprint $table) {
             $table->foreign('item_id')->references('id')->on('voucher_items');
         });
 
@@ -337,7 +337,7 @@ class AddForeignKeys extends Migration
             $table->dropForeign('voucher_items_voucher_id_foreign');
         });
 
-        Schema::table('item_amounts', function (Blueprint $table) {
+        Schema::table('voucher_item_amounts', function (Blueprint $table) {
             $table->dropForeign('item_amounts_item_id_foreign');
         });
 

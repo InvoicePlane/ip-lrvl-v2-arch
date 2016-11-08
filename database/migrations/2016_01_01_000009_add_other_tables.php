@@ -61,14 +61,14 @@ class AddOtherTables extends Migration
 
         Schema::create('tax_rate_voucher_item', function (Blueprint $table) {
             $table->integer('voucher_item_id')->unsigned();
-            $table->integer('taxrate_id')->unsigned();
+            $table->integer('tax_rate_id')->unsigned();
 
             $table->primary(['voucher_item_id', 'tax_rate_id']);
         });
 
         Schema::create('tax_rate_voucher', function (Blueprint $table) {
             $table->integer('voucher_id')->unsigned();
-            $table->integer('taxrate_id')->unsigned();
+            $table->integer('tax_rate_id')->unsigned();
 
             $table->primary(['voucher_id', 'tax_rate_id']);
         });
