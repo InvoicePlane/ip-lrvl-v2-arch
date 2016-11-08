@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddForeignKeys extends Migration
 {
@@ -122,6 +122,11 @@ class AddForeignKeys extends Migration
             $table->foreign('voucher_id')->references('id')->on('vouchers');
         });
 
+        Schema::table('invoice_quotes', function (Blueprint $table) {
+            $table->foreign('invoice_id')->references('id')->on('invoices');
+            $table->foreign('quote_id')->references('id')->on('quotes');
+        });
+
         Schema::table('recurring_invoices', function (Blueprint $table) {
             $table->foreign('base_invoice_id')->references('id')->on('invoices');
             $table->foreign('base_voucher_id')->references('id')->on('vouchers');
@@ -138,6 +143,10 @@ class AddForeignKeys extends Migration
             $table->foreign('project_id')->references('id')->on('projects');
         });
 
+        Schema::table('voucher_discounts', function (Blueprint $table) {
+            $table->foreign('voucher_id')->references('id')->on('vouchers');
+        });
+
         Schema::table('voucher_amounts', function (Blueprint $table) {
             $table->foreign('voucher_id')->references('id')->on('vouchers');
         });
@@ -148,6 +157,10 @@ class AddForeignKeys extends Migration
 
         Schema::table('item_amounts', function (Blueprint $table) {
             $table->foreign('item_id')->references('id')->on('voucher_items');
+        });
+
+        Schema::table('voucher_item_discounts', function (Blueprint $table) {
+            $table->foreign('voucher_item_id')->references('id')->on('voucher_items');
         });
 
         /*
@@ -291,6 +304,11 @@ class AddForeignKeys extends Migration
             $table->dropForeign('quotes_voucher_id_foreign');
         });
 
+        Schema::table('invoice_quotes', function (Blueprint $table) {
+            $table->dropForeign('invoices_quotes_invoice_id_foreign');
+            $table->dropForeign('invoices_quotes_quote_id_foreign');
+        });
+
         Schema::table('recurring_invoices', function (Blueprint $table) {
             $table->dropForeign('recurring_invoices_base_invoice_id_foreign');
             $table->dropForeign('recurring_invoices_base_voucher_id_foreign');
@@ -307,6 +325,10 @@ class AddForeignKeys extends Migration
             $table->dropForeign('vouchers_project_id_foreign');
         });
 
+        Schema::table('voucher_discounts', function (Blueprint $table) {
+            $table->dropForeign('voucher_discounts_voucher_id_foreign');
+        });
+
         Schema::table('voucher_amounts', function (Blueprint $table) {
             $table->dropForeign('voucher_amounts_voucher_id_foreign');
         });
@@ -317,6 +339,10 @@ class AddForeignKeys extends Migration
 
         Schema::table('item_amounts', function (Blueprint $table) {
             $table->dropForeign('item_amounts_item_id_foreign');
+        });
+
+        Schema::table('voucher_item_discounts', function (Blueprint $table) {
+            $table->dropForeign('voucher_item_discounts_voucher_item_id_foreign');
         });
 
         /*

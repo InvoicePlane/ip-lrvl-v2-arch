@@ -33,6 +33,13 @@ class AddVoucherTables extends Migration
             $table->integer('voucher_id')->unsigned(); // FK
         });
 
+        Schema::create('invoice_quotes', function (Blueprint $table) {
+            $table->integer('quote_id')->unsigned(); // FK
+            $table->integer('invoice_id')->unsigned(); // FK
+
+            $table->primary(['quote_id', 'invoice_id']);
+        });
+
         Schema::create('recurring_invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('base_invoice_id')->unsigned(); // FK
@@ -76,6 +83,13 @@ class AddVoucherTables extends Migration
             $table->decimal('voucher_balance', 20, 5);
         });
 
+        Schema::create('voucher_discounts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('voucher_id')->unsigned(); // FK
+            $table->decimal('item_discount_amount', 20, 5);
+            $table->decimal('item_discount_percent', 20, 5);
+        });
+
         Schema::create('voucher_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->unique();
@@ -106,11 +120,16 @@ class AddVoucherTables extends Migration
             $table->decimal('item_purchase_price', 20, 5);
             $table->decimal('item_sales_price', 20, 5);
             $table->decimal('item_subtotal', 20, 5);
-            $table->decimal('item_discount_amount', 20, 5);
-            $table->decimal('item_discount_percent', 20, 5);
             $table->decimal('item_discount_total', 20, 5);
             $table->decimal('item_tax_total', 20, 5);
             $table->decimal('item_total', 20, 5);
+        });
+
+        Schema::create('voucher_item_discounts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('voucher_item_id')->unsigned(); // FK
+            $table->decimal('item_discount_amount', 20, 5);
+            $table->decimal('item_discount_percent', 20, 5);
         });
 
         Schema::create('voucher_statuses', function (Blueprint $table) {
