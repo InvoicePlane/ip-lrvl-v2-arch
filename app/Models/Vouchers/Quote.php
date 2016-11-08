@@ -53,4 +53,13 @@ class Quote extends Model
     {
         return $this->morphMany('App\Models\Note', 'notable');
     }
+
+    /**
+     * Returns all attached invoices
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function invoices()
+    {
+        return $this->belongsToMany('App\Models\Vouchers\Invoices', 'invoice_quotes');
+    }
 }

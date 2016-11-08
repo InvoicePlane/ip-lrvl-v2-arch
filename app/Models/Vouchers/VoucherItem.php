@@ -42,6 +42,15 @@ class VoucherItem extends Model
     }
 
     /**
+     * Returns all discounts for the item
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function discounts()
+    {
+        return $this->hasMany('App\Models\Vouchers\VoucherItemDiscount', 'item_id');
+    }
+
+    /**
      * Returns the original item
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
