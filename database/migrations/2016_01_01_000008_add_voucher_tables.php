@@ -86,8 +86,8 @@ class AddVoucherTables extends Migration
         Schema::create('voucher_discounts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('voucher_id')->unsigned(); // FK
-            $table->decimal('item_discount_amount', 20, 5);
-            $table->decimal('item_discount_percent', 20, 5);
+            $table->decimal('discount_amount', 20, 5);
+            $table->decimal('discount_percent', 20, 5);
         });
 
         Schema::create('voucher_groups', function (Blueprint $table) {
@@ -127,9 +127,9 @@ class AddVoucherTables extends Migration
 
         Schema::create('voucher_item_discounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('voucher_item_id')->unsigned(); // FK
-            $table->decimal('item_discount_amount', 20, 5);
-            $table->decimal('item_discount_percent', 20, 5);
+            $table->integer('item_id')->unsigned(); // FK
+            $table->decimal('discount_amount', 20, 5);
+            $table->decimal('discount_percent', 20, 5);
         });
 
         Schema::create('voucher_statuses', function (Blueprint $table) {

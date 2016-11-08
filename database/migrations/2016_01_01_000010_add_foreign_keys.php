@@ -160,7 +160,7 @@ class AddForeignKeys extends Migration
         });
 
         Schema::table('voucher_item_discounts', function (Blueprint $table) {
-            $table->foreign('voucher_item_id')->references('id')->on('voucher_items');
+            $table->foreign('item_id')->references('id')->on('voucher_items');
         });
 
         /*
