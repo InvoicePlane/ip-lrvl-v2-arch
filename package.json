@@ -5,7 +5,7 @@
     "dev": "gulp watch"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.4",
+    "bootstrap": "^4.0.0-alpha.5",
     "jquery": "^3.1.0",
     "jquery-ui": "^1.12.1",
     "selectize": "^0.12.3"
