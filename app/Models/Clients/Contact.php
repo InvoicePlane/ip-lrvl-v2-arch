@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $mobile
  * @property string $fax
  * @property string $email
- * @property string $web
  * @property boolean $is_disabled
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -38,7 +37,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereMobile($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereFax($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereEmail($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereWeb($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereIsDisabled($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereUpdatedAt($value)
@@ -63,7 +61,6 @@ class Contact extends Model
         'mobile',
         'fax',
         'email',
-        'web',
         'is_disabled',
     ];
 

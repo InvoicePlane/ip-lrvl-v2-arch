@@ -15,6 +15,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer $main_contact_id
  * @property integer $main_address_id
  * @property integer $language_id
+ * @property string $telephone
+ * @property string $fax
+ * @property string $email
+ * @property string $web
  * @property boolean $is_company
  * @property boolean $is_vendor
  * @property boolean $is_disabled
@@ -33,6 +37,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainContactId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainAddressId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereLanguageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereTelephone($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereFax($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereWeb($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsCompany($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsVendor($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsDisabled($value)
@@ -55,6 +63,10 @@ class Client extends Model
         'main_contact_id',
         'main_address_id',
         'language_id',
+        'telephone',
+        'fax',
+        'email',
+        'web',
         'is_company',
         'is_vendor',
         'is_disabled',
