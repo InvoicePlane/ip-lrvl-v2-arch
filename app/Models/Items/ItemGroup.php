@@ -7,17 +7,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ItemGroup
+ *
  * @package App\Models\Items
+ * @property integer $id
+ * @property string $title
+ * @property string $description
+ * @property integer $parent_group_id
+ * @property string $deleted_at
+ * @property-read \App\Models\Items\ItemGroup $parentGroup
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Items\Item[] $items
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Items\ItemGroup whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Items\ItemGroup whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Items\ItemGroup whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Items\ItemGroup whereParentGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Items\ItemGroup whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class ItemGroup extends Model
 {
     use SoftDeletes;
 
     // Table definition
-    protected $table = 'item_groups';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'item_groups';
 
     // Fillable db fields
     protected $fillable = [

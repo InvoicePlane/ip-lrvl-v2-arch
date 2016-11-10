@@ -6,15 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Quote
+ *
  * @package App\Models\Vouchers
+ * @property integer $id
+ * @property integer $voucher_id
+ * @property-read \App\Models\Vouchers\Voucher $voucher
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vouchers\Invoice[] $invoices
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Quote whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Quote whereVoucherId($value)
+ * @mixin \Eloquent
  */
 class Quote extends Model
 {
     // Table definition
-    protected $table = 'quotes';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'quotes';
 
     // Fillable db fields
     protected $fillable = [
@@ -60,6 +70,6 @@ class Quote extends Model
      */
     public function invoices()
     {
-        return $this->belongsToMany('App\Models\Vouchers\Invoices', 'invoice_quotes');
+        return $this->belongsToMany('App\Models\Vouchers\Invoice', 'invoice_quotes');
     }
 }

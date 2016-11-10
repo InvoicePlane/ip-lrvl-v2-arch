@@ -7,7 +7,43 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Contact
+ *
  * @package App\Models\Clients
+ * @property integer $id
+ * @property string $title
+ * @property string $forename
+ * @property string $surname
+ * @property integer $client_id
+ * @property integer $address_id
+ * @property string $telephone
+ * @property string $mobile
+ * @property string $fax
+ * @property string $email
+ * @property string $web
+ * @property boolean $is_disabled
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Clients\Client $client
+ * @property-read \App\Models\Clients\Address $address
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereForename($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereSurname($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereAddressId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereTelephone($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereMobile($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereFax($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereWeb($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereIsDisabled($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Contact whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class Contact extends Model
 {

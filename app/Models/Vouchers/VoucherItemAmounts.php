@@ -6,15 +6,36 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class VoucherItemAmounts
+ *
  * @package App\Models\Vouchers
+ * @property integer $id
+ * @property integer $item_id
+ * @property float $item_amount
+ * @property float $item_purchase_price
+ * @property float $item_sales_price
+ * @property float $item_subtotal
+ * @property float $item_discount_total
+ * @property float $item_tax_total
+ * @property float $item_total
+ * @property-read \App\Models\Items\Item $item
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemAmount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemPurchasePrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemSalesPrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemSubtotal($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemDiscountTotal($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemTaxTotal($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItemAmounts whereItemTotal($value)
+ * @mixin \Eloquent
  */
 class VoucherItemAmounts extends Model
 {
     // Table definition
-    protected $table = 'voucher_item_amounts';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'voucher_item_amounts';
 
     // Fillable db fields
     protected $fillable = [

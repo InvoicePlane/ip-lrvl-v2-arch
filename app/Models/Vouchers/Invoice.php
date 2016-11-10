@@ -6,15 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Invoice
+ *
  * @package App\Models\Vouchers
+ * @property integer $id
+ * @property integer $voucher_id
+ * @property-read \App\Models\Vouchers\Voucher $voucher
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vouchers\Quote[] $quotes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Invoice whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Invoice whereVoucherId($value)
+ * @mixin \Eloquent
  */
 class Invoice extends Model
 {
     // Table definition
-    protected $table = 'invoices';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'invoices';
 
     // Fillable db fields
     protected $fillable = [

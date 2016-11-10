@@ -7,7 +7,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Address
+ *
  * @package App\Models\Clients
+ * @property integer $id
+ * @property integer $client_id
+ * @property string $address_block
+ * @property string $country_code
+ * @property boolean $is_disabled
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Clients\Client $client
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Clients\Contact[] $contacts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereAddressBlock($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereCountryCode($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereIsDisabled($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Address whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class Address extends Model
 {

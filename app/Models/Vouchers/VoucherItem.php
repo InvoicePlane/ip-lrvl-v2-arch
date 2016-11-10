@@ -7,7 +7,36 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class VoucherItem
+ *
  * @package App\Models\Vouchers
+ * @property integer $id
+ * @property integer $voucher_id
+ * @property string $title
+ * @property string $description
+ * @property integer $item_order
+ * @property integer $original_item_id
+ * @property integer $task_id
+ * @property integer $item_tax_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Vouchers\VoucherItemAmounts $amounts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vouchers\VoucherItemDiscount[] $discounts
+ * @property-read \App\Models\Items\Item $originalItem
+ * @property-read \App\Models\Projects\Task $task
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Taxrate[] $taxes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereVoucherId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereItemOrder($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereOriginalItemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereTaskId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereItemTaxId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\VoucherItem whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class VoucherItem extends Model
 {

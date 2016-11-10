@@ -7,7 +7,35 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Task
+ *
  * @package App\Models\Projects
+ * @property integer $id
+ * @property string $title
+ * @property string $description
+ * @property integer $project_id
+ * @property integer $author_id
+ * @property integer $assignee_id
+ * @property integer $status_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Projects\Project $project
+ * @property-read \App\Models\Users\User $author
+ * @property-read \App\Models\Users\User $assignee
+ * @property-read \App\Models\Projects\TaskStatus $status
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereProjectId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereAuthorId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereAssigneeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereStatusId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Projects\Task whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class Task extends Model
 {

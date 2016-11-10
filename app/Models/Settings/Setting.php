@@ -6,15 +6,29 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Setting
+ *
  * @package App\Models\Settings
+ * @property integer $id
+ * @property string $key
+ * @property mixed $value
+ * @property integer $company_id
+ * @property integer $user_id
+ * @property-read \App\Models\Users\User $company
+ * @property-read \App\Models\Users\User $user
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Setting whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Setting whereKey($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Setting whereValue($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Setting whereCompanyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Setting whereUserId($value)
+ * @mixin \Eloquent
  */
 class Setting extends Model
 {
     // Table definition
-    protected $table = 'settings';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'settings';
 
     // Fillable db fields
     protected $fillable = [

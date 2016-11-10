@@ -6,15 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class PaymentMethod
+ *
  * @package App\Models\Payments
+ * @property integer $id
+ * @property string $title
+ * @property integer $payment_gateway_id
+ * @property boolean $is_disabled
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Payments\Payment[] $payments
+ * @property-read \App\Models\Payments\PaymentGateway $gateway
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Payments\PaymentMethod whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Payments\PaymentMethod whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Payments\PaymentMethod wherePaymentGatewayId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Payments\PaymentMethod whereIsDisabled($value)
+ * @mixin \Eloquent
  */
 class PaymentMethod extends Model
 {
     // Table definition
-    protected $table = 'payment_methods';
+    public $timestamps = false;
 
     // Disable timestamps
-    public $timestamps = false;
+    protected $table = 'payment_methods';
 
     // Fillable db fields
     protected $fillable = [

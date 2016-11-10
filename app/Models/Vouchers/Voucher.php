@@ -7,7 +7,46 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Voucher
+ *
  * @package App\Models\Vouchers
+ * @property integer $id
+ * @property string $voucher_number
+ * @property integer $company_id
+ * @property integer $voucher_group_id
+ * @property integer $status_id
+ * @property integer $user_id
+ * @property integer $client_id
+ * @property integer $currency_id
+ * @property integer $language_id
+ * @property integer $project_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Settings\Company $company
+ * @property-read \App\Models\Vouchers\VoucherGroup $voucherGroup
+ * @property-read \App\Models\Vouchers\VoucherStatus $voucherStatus
+ * @property-read \App\Models\Users\User $user
+ * @property-read \App\Models\Clients\Client $client
+ * @property-read \App\Models\Settings\Currency $currency
+ * @property-read \App\Models\Settings\Language $language
+ * @property-read \App\Models\Projects\Project $project
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vouchers\VoucherItem[] $items
+ * @property-read \App\Models\Vouchers\VoucherAmounts $amounts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Taxrate[] $taxes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereVoucherNumber($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereCompanyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereVoucherGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereStatusId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereCurrencyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereLanguageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereProjectId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Vouchers\Voucher whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class Voucher extends Model
 {

@@ -7,7 +7,39 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Client
+ *
  * @package App\Models\Clients
+ * @property integer $id
+ * @property string $name
+ * @property string $short_name
+ * @property integer $main_contact_id
+ * @property integer $main_address_id
+ * @property integer $language_id
+ * @property boolean $is_company
+ * @property boolean $is_vendor
+ * @property boolean $is_disabled
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Clients\Contact $mainContact
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Clients\Contact[] $contacts
+ * @property-read \App\Models\Clients\Address $mainAddress
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Clients\Address[] $addresses
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereShortName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainContactId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainAddressId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereLanguageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsCompany($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsVendor($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereIsDisabled($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class Client extends Model
 {

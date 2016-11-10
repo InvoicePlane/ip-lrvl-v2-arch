@@ -7,7 +7,38 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class User
+ *
  * @package App\Models\Users
+ * @property integer $id
+ * @property string $name
+ * @property string $email
+ * @property integer $client_contact_id
+ * @property integer $company_id
+ * @property boolean $is_disabled
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property-read \App\Models\Clients\Contact $clientContact
+ * @property-read \App\Models\Settings\Company $company
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Projects\Project[] $projects
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Projects\TimeTracking[] $timeTrackings
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vouchers\Voucher[] $vouchers
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereClientContactId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereCompanyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereIsDisabled($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Users\User whereDeletedAt($value)
+ * @mixin \Eloquent
  */
 class User extends Model
 {
@@ -89,7 +120,7 @@ class User extends Model
      */
     public function timeTrackings()
     {
-        return $this->hasMany('App\Models\Projects\TimeTrackings', 'user_id');
+        return $this->hasMany('App\Models\Projects\TimeTracking', 'user_id');
     }
 
     /**
