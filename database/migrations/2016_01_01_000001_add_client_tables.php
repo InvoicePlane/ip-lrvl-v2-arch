@@ -30,10 +30,10 @@ class AddClientTables extends Migration
             $table->integer('main_contact_id')->unsigned()->nullable(); // FK
             $table->integer('main_address_id')->unsigned()->nullable(); // FK
             $table->integer('language_id')->unsigned(); // FK
-            $table->string('telephone');
-            $table->string('fax');
-            $table->string('email');
-            $table->string('web');
+            $table->string('telephone')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('email')->nullable();
+            $table->string('web')->nullable();
             $table->boolean('is_company');
             $table->boolean('is_vendor');
             $table->boolean('is_disabled');
@@ -48,10 +48,10 @@ class AddClientTables extends Migration
             $table->string('surname');
             $table->integer('client_id')->unsigned(); // FK
             $table->integer('address_id')->unsigned()->nullable(); // FK
-            $table->string('telephone');
-            $table->string('mobile');
-            $table->string('fax');
-            $table->string('email');
+            $table->string('telephone')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('is_disabled');
             $table->timestamps();
             $table->softDeletes();
