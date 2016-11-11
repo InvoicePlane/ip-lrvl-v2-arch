@@ -12,6 +12,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property string $short_name
  * @property integer $address_id
+ * @property string $telephone
+ * @property string $fax
+ * @property string $email
+ * @property string $web
  * @property boolean $is_disabled
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -23,6 +27,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereShortName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereAddressId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereTelephone($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereFax($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereWeb($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereIsDisabled($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings\Company whereUpdatedAt($value)
@@ -38,6 +46,10 @@ class Company extends Model
         'name',
         'short_name',
         'address_id',
+        'telephone',
+        'fax',
+        'email',
+        'web',
         'is_disabled',
     ];
 

@@ -18,6 +18,10 @@ class AddSettingsTables extends Migration
             $table->string('name')->unique();
             $table->string('short_name')->nullable();
             $table->integer('address_id')->unsigned()->nullable(); // FK
+            $table->string('telephone')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('email')->nullable();
+            $table->string('web')->nullable();
             $table->boolean('is_disabled');
             $table->timestamps();
         });
