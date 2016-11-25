@@ -30,6 +30,7 @@ class AddClientTables extends Migration
             $table->integer('main_contact_id')->unsigned()->nullable(); // FK
             $table->integer('main_address_id')->unsigned()->nullable(); // FK
             $table->integer('language_id')->unsigned(); // FK
+            $table->integer('company_id')->unsigned(); // FK
             $table->string('telephone')->nullable();
             $table->string('fax')->nullable();
             $table->string('email')->nullable();

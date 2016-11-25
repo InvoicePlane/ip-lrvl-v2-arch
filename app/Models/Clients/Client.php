@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer $main_contact_id
  * @property integer $main_address_id
  * @property integer $language_id
+ * @property integer $company_id
  * @property string $telephone
  * @property string $fax
  * @property string $email
@@ -29,6 +30,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Clients\Contact[] $contacts
  * @property-read \App\Models\Clients\Address $mainAddress
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Clients\Address[] $addresses
+ * @property-read \App\Models\Settings\Language $language
+ * @property-read \App\Models\Settings\Company $company
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attachment[] $attachments
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Note[] $notes
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereId($value)
@@ -37,6 +40,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainContactId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereMainAddressId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereLanguageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereCompanyId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereTelephone($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereFax($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Clients\Client whereEmail($value)
@@ -63,6 +67,7 @@ class Client extends Model
         'main_contact_id',
         'main_address_id',
         'language_id',
+        'company_id',
         'telephone',
         'fax',
         'email',
@@ -112,6 +117,24 @@ class Client extends Model
     public function addresses()
     {
         return $this->hasMany('App\Models\Clients\Address', 'client_id');
+    }
+
+    /**
+     * Returns the client language
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function language()
+    {
+        return $this->hasOne('App\Models\Settings\Language');
+    }
+
+    /**
+     * Returns the company the client is attached to
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function company()
+    {
+        return $this->hasOne('App\Models\Settings\Company');
     }
 
     /**
