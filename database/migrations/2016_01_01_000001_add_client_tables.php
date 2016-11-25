@@ -15,7 +15,7 @@ class AddClientTables extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('client_id')->unsigned(); // FK
+            $table->integer('client_id')->unsigned()->nullable(); // FK
             $table->text('address_block');
             $table->string('country_code');
             $table->boolean('is_disabled');
